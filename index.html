@@ -1,0 +1,567 @@
+[10.10.2026 20:49] Saparova Gulchehra: <!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muhandislik maktabi | Navoiy</title>
+
+  <style>
+    :root {
+      --bg: #f4f7fc;
+      --card: #ffffff;
+      --text: #15223b;
+      --muted: #64748b;
+      --primary: #2563eb;
+      --accent: #06b6d4;
+      --nav: #ffffff;
+      --border: #e2e8f0;
+    }
+
+    body.dark {
+      --bg: #0b1220;
+      --card: #131f33;
+      --text: #f1f5f9;
+      --muted: #b3c0d4;
+      --nav: #101a2b;
+      --border: #29364b;
+      --primary: #60a5fa;
+      --accent: #22d3ee;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--nav);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      max-width: 1150px;
+      margin: auto;
+      padding: 16px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: bold;
+      font-size: 17px;
+    }
+
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      color: white;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #2563eb, #06b6d4);
+      font-size: 23px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    button, .btn {
+      cursor: pointer;
+      border: none;
+      border-radius: 10px;
+      padding: 11px 17px;
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .theme-btn {
+      color: var(--text);
+      background: var(--bg);
+      border: 1px solid var(--border);
+    }
+
+    .hero {
+      max-width: 1150px;
+      margin: auto;
+      padding: 85px 22px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 45px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 13px;
+      border-radius: 30px;
+      color: var(--primary);
+      background: var(--card);
+      border: 1px solid var(--border);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 5vw, 58px);
+      line-height: 1.12;
+      letter-spacing: -1.5px;
+      margin-bottom: 22px;
+    }
+
+    .gradient {
+      background: linear-gradient(90deg, #2563eb, #06b6d4);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 600px;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      color: white;
+      background: linear-gradient(135deg, #2563eb, #0891b2);
+      transition: transform 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .hero-art {
+      min-height: 330px;
+      border-radius: 30px;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at 70% 25%, #67e8f9 0, transparent 25%),
+        radial-gradient(circle at 25% 80%, #60a5fa 0, transparent 35%),
+        linear-gradient(135deg, #172554, #0f766e);
+      box-shadow: 0 25px 60px #2563eb22;
+      overflow: hidden;
+    }
+
+    .hero-art span {
+      font-size: 120px;
+      filter: drop-shadow(0 12px 20px #0005);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-14px); }
+    }
+
+    section {
+      max-width: 1150px;
+      padding: 65px 22px;
+      margin: auto;
+      scroll-margin-top: 80px;
+    }
+[10.10.2026 20:49] Saparova Gulchehra: .section-heading {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(27px, 4vw, 38px);
+      margin-bottom: 10px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 25px 21px;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 15px 35px #2563eb16;
+    }
+
+    .card-icon {
+      font-size: 38px;
+      margin-bottom: 13px;
+    }
+
+    .card h3 {
+      margin-bottom: 9px;
+      font-size: 20px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .about-panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 30px;
+    }
+
+    .about-panel h2 {
+      font-size: 30px;
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+
+    .about-panel p {
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .feature {
+      display: flex;
+      gap: 13px;
+      margin: 18px 0;
+    }
+
+    .feature-icon {
+      font-size: 25px;
+    }
+
+    .feature p {
+      margin: 3px 0 0;
+    }
+
+    .project-banner {
+      padding: 42px;
+      border-radius: 25px;
+      color: white;
+      background: linear-gradient(125deg, #1d4ed8, #0e7490);
+      text-align: center;
+    }
+
+    .project-banner h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      margin-bottom: 12px;
+    }
+
+    .project-banner p {
+      max-width: 700px;
+      margin: auto;
+      color: #e0f2fe;
+    }
+
+    .activities {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .activity {
+      padding: 24px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 17px;
+    }
+
+    .activity span {
+      font-size: 32px;
+    }
+
+    .activity h3 {
+      margin: 12px 0 6px;
+    }
+
+    .activity p {
+      color: var(--muted);
+    }
+
+    footer {
+      margin-top: 35px;
+      padding: 28px 20px;
+      text-align: center;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      background: var(--card);
+    }
+
+    .reveal {
+      animation: appear 0.8s ease both;
+    }
+
+    @keyframes appear {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 850px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 55px;
+      }
+
+      .hero-art {
+        min-height: 250px;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .activities {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      nav {
+        flex-wrap: wrap;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 13px;
+        font-size: 14px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-art {
+        min-height: 210px;
+      }
+
+      .hero-art span {
+        font-size: 90px;
+      }
+
+      .project-banner {
+        padding: 28px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="#bosh" class="logo">
+        <span class="logo-icon">⚙</span>
+        <span>Muhandislik<br>maktabi</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#bosh">Bosh sahifa</a>
+        <a href="#yonalishlar">Yo‘nalishlar</a>
+        <a href="#biz">Biz haqimizda</a>
+        <a href="#faoliyat">Faoliyatimiz</a>
+        <button class="theme-btn" id="themeToggle"
+          aria-label="Rang rejimini almashtirish">🌙</button>
+      </div>
+    </nav>
+  </header>
+[10.10.2026 20:49] Saparova Gulchehra: <main>
+    <section class="hero" id="bosh">
+      <div class="reveal">
+        <span class="tag">📍 Navoiy shahri · Ta’lim va innovatsiya</span>
+        <h1>Kelajak <span class="gradient">muhandislari</span> shu yerdan boshlanadi</h1>
+        <p>
+          Bilim, ijodkorlik va zamonaviy texnologiyalar orqali
+          yangi g‘oyalarni kashf etamiz va kelajak sari qadam tashlaymiz.
+        </p>
+        <a class="btn" href="#yonalishlar">Yo‘nalishlarni ko‘rish →</a>
+      </div>
+
+      <div class="hero-art" aria-label="Muhandislik ramzi">
+        <span>⚙️</span>
+      </div>
+    </section>
+
+    <section id="yonalishlar">
+      <div class="section-heading">
+        <h2>Bilim olamiga xush kelibsiz!</h2>
+        <p>Kelajak uchun muhim bilim va ko‘nikmalar.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="card-icon">📐</div>
+          <h3>Matematika</h3>
+          <p>Mantiqiy fikrlash, hisoblash va murakkab masalalarni yechish.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">💻</div>
+          <h3>Dasturlash</h3>
+          <p>Algoritmlar, veb-saytlar va raqamli loyihalar yaratish.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🔬</div>
+          <h3>Fizika</h3>
+          <p>Tabiat qonunlarini o‘rganish va tajribalar orqali anglash.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🌍</div>
+          <h3>Ingliz tili</h3>
+          <p>Dunyo bilan muloqot qilish va yangi imkoniyatlarni kashf etish.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="biz">
+      <div class="about-grid">
+        <div class="about-panel">
+          <h2>Har bir katta kashfiyot bir g‘oyadan boshlanadi.</h2>
+          <p>
+            Muhandislik — muammolarni tushunish, yechim izlash
+            va foydali narsalar yaratishga intilishdir.
+          </p>
+          <p>
+            O‘rganish, savol berish va tajriba qilish orqali
+            o‘z imkoniyatlarimizni rivojlantiramiz.
+          </p>
+        </div>
+
+        <div class="about-panel">
+          <div class="feature">
+            <span class="feature-icon">🧠</span>
+            <div>
+              <h3>Mustaqil fikrlash</h3>
+              <p>Muammolarga turli tomondan qarashni o‘rganamiz.</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <span class="feature-icon">🛠️</span>
+            <div>
+              <h3>Amaliy loyihalar</h3>
+              <p>G‘oyalarni sinab ko‘rib, yangi yechimlar izlaymiz.</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <span class="feature-icon">🤝</span>
+            <div>
+              <h3>Jamoaviy ish</h3>
+              <p>Birgalikda fikrlash va tajriba almashishga intilamiz.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="project-banner">
+        <h2>G‘oyadan — yechimga! 🚀</h2>
+        <p>
+          Bugun o‘rgangan bilimimiz ertangi kashfiyotimizning
+          boshlanishi bo‘lishi mumkin. Izlanishdan to‘xtamaylik!
+        </p>
+      </div>
+    </section>
+
+    <section id="faoliyat">
+      <div class="section-heading">
+        <h2>Faoliyatimiz</h2>
+        <p>Bilim va ijodkorlikni rivojlantirish uchun yangi imkoniyatlar.</p>
+      </div>
+
+      <div class="activities">
+        <article class="activity">
+          <span>🤖</span>
+          <h3>Texnologiyalar</h3>
+          <p>Robototexnika va zamonaviy texnologiyalar bilan tanishish.</p>
+        </article>
+
+        <article class="activity">
+          <span>🧩</span>
+          <h3>Zakovat va mantiq</h3>
+          <p>Topqirlik, fikrlash va muammolarni hal qilishni mashq qilish.</p>
+        </article>
+
+        <article class="activity">
+          <span>💡</span>
+          <h3>Yangi g‘oyalar</h3>
+          <p>Ijodiy loyihalar ishlab chiqish va fikrlarni sinab ko‘rish.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+[10.10.2026 20:49] Saparova Gulchehra: <footer>
+    <p>© <span id="year"></span> Muhandislik maktabi · Navoiy</p>
+    <p>Bilim bugun — imkoniyat ertaga.</p>
+  </footer>
+
+  <script>
+    const themeButton = document.getElementById("themeToggle");
+
+    themeButton.addEventListener("click", function () {
+      document.body.classList.toggle("dark");
+
+      themeButton.textContent =
+        document.body.classList.contains("dark") ? "☀️" : "🌙";
+    });
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
+
