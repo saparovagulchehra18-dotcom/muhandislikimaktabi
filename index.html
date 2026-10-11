@@ -1,4 +1,4 @@
-[10.10.2026 20:49] Saparova Gulchehra: <!DOCTYPE html>
+Navoi shahar Muhandislik maktabi <!DOCTYPE html>
 <html lang="uz">
 <head>
   <meta charset="UTF-8">
@@ -562,6 +562,64 @@
     document.getElementById("year").textContent =
       new Date().getFullYear();
   </script>
+  <!-- O‘QITUVCHILAR BO‘LIMI -->
+<section id="teachers">
+  <h2>Bizning o‘qituvchilarimiz</h2>
+
+  <div class="teachers-list">
+    <div class="teacher-card">Odilov To‘xtamurod</div>
+    <div class="teacher-card">Ra’no Ro‘ziqulova</div>
+    <div class="teacher-card">Oybek Sulaymonov</div>
+    <div class="teacher-card">Rahmatova Dilrabo</div>
+    <div class="teacher-card">Umarov Xudoyorxon</div>
+    <div class="teacher-card">Dilrabo Olimova</div>
+    <div class="teacher-card">Ozoda Sa’dinova</div>
+    <div class="teacher-card">Ashurova Marg‘uba</div>
+    <div class="teacher-card">Madina Davrobova</div>
+    <div class="teacher-card">Zafar Ne’matov</div>
+    <div class="teacher-card">Komila Baxodirovna</div>
+    <div class="teacher-card">Anvar Shodiyev</div>
+    <div class="teacher-card">Shoxrux Abduxalilov</div>
+    <div class="teacher-card">Sh. Fayzullayevna Umarova</div>
+    <div class="teacher-card">Akmal</div>
+    <div class="teacher-card">Zuhriddin Hudoyberdiyev</div>
+    <div class="teacher-card">Saodat Turdiyeva</div>
+    <div class="teacher-card">Durdona Farxodovna</div>
+    <div class="teacher-card">Ravshan Kobilov</div>
+    <div class="teacher-card">Jabborova</div>
+    <div class="teacher-card">Zebiniso</div>
+  </div>
+</section>
+
+<style>
+  #teachers {
+    padding: 30px 16px;
+    text-align: center;
+  }
+
+  #teachers h2 {
+    margin-bottom: 24px;
+  }
+
+  .teachers-list {
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fit, minmax(200px, 1fr)
+    );
+    gap: 15px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .teacher-card {
+    padding: 18px 12px;
+    border-radius: 12px;
+    background: #f0f4ff;
+    color: #243b64;
+    font-weight: 600;
+    box-shadow: 0 2px 8px #00000012;
+  }
+</style>
 </body>
 </html>
 
